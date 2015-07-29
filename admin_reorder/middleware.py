@@ -119,8 +119,7 @@ class ModelAdminReorder(object):
 
     def process_template_response(self, request, response):
         url = resolve(request.path)
-        if not url.app_name == 'admin' and \
-                url.url_name not in ['index', 'app_list']:
+        if not url.app_name == 'admin':
             # current view is not a django admin index
             # or app_list view, bail out!
             return response
